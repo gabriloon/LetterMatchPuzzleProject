@@ -28,7 +28,7 @@ Keyboard :  ESC 키
 을 통해 게임 종료
 
 
-##게임프로세스
+## 게임프로세스
 
 시작 : 
 InGameManager 클래스의 Awake 함수 실행
@@ -78,7 +78,7 @@ EndStage 함수에서는 캐릭터를 조작 불가능 상태로 설정하거나
 Space 키또는 A 버튼을 누를 경우 InGameManager의 Initialize 를 실행시키면서 설명하는 단계의 
 playButton 이 입력되고 게임을 시작하려고 할 때 단계로 돌아가게 됩니다. 
 
-##클래스 다이어그램
+## 클래스 다이어그램
 
 간단한 클래스 다이어그램을 구성하게 되면
 ![JewelProject 클래스 다어어그램 ](https://github.com/user-attachments/assets/328a6270-272c-43d2-9a95-d28bdd7c4af8)
@@ -86,3 +86,6 @@ playButton 이 입력되고 게임을 시작하려고 할 때 단계로 돌아�
 InGameManager   클래스 중심인 싱글톤 패턴을 중심으로 PlayerView, JewelView, BoxView 가 구성된다고 할 수 있습니다. 
 
 키입력 관련해서는 InputSystem 을 사용 했으며, 먼저 PlayerInput 을 구성하면서 패드랑 키보드 키를 할당하고, 그걸 하이어라키의 InGameManager 오브젝트의 PlayerInput 컴포넌트와 OnUIAButton, OnUIBButton, OnMove , OnInteraction 함수를 통해 조작에 관여했습니다.  
+
+## Contributor
+gabriloon
