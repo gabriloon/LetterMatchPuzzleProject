@@ -3,13 +3,13 @@ It is a game where you find the correct alphabet among objects scattered through
 
 ## 조작
 프로젝트 내에서 조작의 경우에는 Unity Input System 그 중 InputAction 을 만들어주고 InGameManager.cs 에서 상황 및 조작 필요성에 따라 ActionMap 을 변경하는 식으로 해서 조작 시스템이 돌아가도록 구성했습니다.
-* 조작 키: 
+
 게임 시작 전:
 Keyboard :  Space 키
 패드 : A 버튼(엑스박스 패드 기준, 다른 패드의 경우 사방향 중 남쪽에 있는 버튼) 
 을 통해 게임 시작
 
-게임  시작: 
+게임 시작: 
 Keyboard :  WASD
 패드 :  왼쪽 스틱 , DPAD
 을 통해 캐릭터 이동
@@ -78,30 +78,10 @@ EndStage 함수에서는 캐릭터를 조작 불가능 상태로 설정하거나
 Space 키또는 A 버튼을 누를 경우 InGameManager의 Initialize 를 실행시키면서 설명하는 단계의 
 playButton 이 입력되고 게임을 시작하려고 할 때 단계로 돌아가게 됩니다. 
 
+##클래스 다이어그램
 
-=====================
 간단한 클래스 다이어그램을 구성하게 되면
-
-+---------------------+       +-------------------+
-|   InGameManager  |       |    PlayerView     |
-|-----------------------|       |--------------------|
-| - instance             |<-->| - playerObject    |
-| - minBounds         |       | - isControllable  |
-| - maxBounds         |       +-------------------+
-| - boxPrefab           |
-| - jewelPrefab         |       +-------------------+
-| - playButton          |<-->|     JewelView      |
-| - endButton          |       |---------------------|
-| - playerObject       |       | -    jewelID         |
-| - objectInParent    |       +-------------------+
-| - initFillJewel...       |
-|-----------------------|
-| + Initialize()          |
-| + EndGame()        |
-| + PlayJewelAnim..  |
-| + OnUIAButton()   |
-| + OnUIBButton()   |
-+---------------------+
+![JewelProject 클래스 다어어그램 ](https://github.com/user-attachments/assets/328a6270-272c-43d2-9a95-d28bdd7c4af8)
 
 InGameManager   클래스 중심인 싱글톤 패턴을 중심으로 PlayerView, JewelView, BoxView 가 구성된다고 할 수 있습니다. 
 
